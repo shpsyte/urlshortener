@@ -1,17 +1,19 @@
 const UrlShortener = require('../models/UrlShortener')
 const UrlStatistic = require('../models/UrlStatistic')
 const randomstring = require('randomstring')
-const url = require('../validators/validUrl')
+const urlValid = require('../validators/validUrl')
 
 class UrlShortenerController {
   async store (req, res) {
-    let { completeUrl } = req.body
+    let urlKey = req.params.key
+    let { url } = req.body
+    let completeUrl = urlKey || url
     let data = { completeUrl: '', keyOfUrl: '' }
 
     data.completeUrl = completeUrl
     data.keyOfUrl = randomstring.generate(7)
 
-    if (!url(data.completeUrl)) {
+    if (!urlValid(data.completeUrl)) {
       return res.status(400).json({ error: 'Url is invalid!' })
     }
 

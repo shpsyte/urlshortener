@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/mdl.css"/>
+    <link rel="stylesheet" href="/app.css" />
+   <link rel="stylesheet" href="/fork.css" />
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>Shortener URL</title>
+    <meta name="description" content="Short URL, simple webapp RestFull API.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+ 
+  </head>
+  <body>
+  <a class="github-fork-ribbon fixed" href="https://github.com/shpsyte/urlshortener" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <h3 class="display-2">WebApp shortener URL, with NodeJS based o <b>RESTful API.</b> </h3>
+            <a target="_blank" href="https://github.com/shpsyte/urlshortener">How to use this WebAPI</a>
+            <div class="timeline-wrapper">
+                <form>
+                  <div id="p2" style="display: none" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="url" name="url">
+                        <label class="mdl-textfield__label" for="url">Url to Short...</label>
+                      </div>
+                  <button id="send" name="send" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Shorten
+                  </button>
+                </form>
+            </div>
+            <ul class="ul demo-list-item mdl-list"></ul>
+          </div>
+        </div>
+        <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+      <footer class="demo-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <a target="_blank" href="https://github.com/shpsyte/urlshortener">Check how to use this WebAPI</a>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script defer src="/mdl.js"></script>
+    
+    <script>
+
+
+    </script>
+  </body>
+</html>
