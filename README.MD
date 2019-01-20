@@ -3,7 +3,7 @@
 This is a OpenSource project to learn NodeJS, MongoDB and All ecosystem arround this tech...
 This project is host on heroku.
 
-![Heroku](https://heroku-badge.herokuapp.com/?app=appshorturl)
+![Heroku](https://heroku-badge.herokuapp.com/?app=sharedidea)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Challange VanHack
