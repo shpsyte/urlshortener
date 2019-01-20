@@ -49,5 +49,38 @@ class UrlShortenerController {
 
     return res.json(data)
   }
+
+  async navigate (req, res, next) {
+    const parameterKey = req.params.key
+    const { key } = req.body
+    const keyToFind = parameterKey || key
+
+    const data = await UrlShortener.findOne({ keyOfUrl: keyToFind })
+
+    if (!data) {
+      return res.status(400).json({ error: 'Not Found, please verify the URL' })
+    }
+
+    const ipInfo = req.ipInfo
+    let statistc = {
+      keyOfUrl: keyToFind,
+      fromIp: req.connection.remoteAddress,
+      fromCity: ipInfo.city || 'localhost',
+      fromCountry: ipInfo.country || 'localhost'
+    }
+
+    await UrlStatistic.create(statistc).then(a => {
+      let url = ''
+      if (!/^https?:\/\//i.test(data.completeUrl)) {
+        url = 'http://' + data.completeUrl
+      }
+      res.redirect(url)
+
+      // res.writeHead(301, {
+      //   Location: url
+      // })
+      // res.send()
+    })
+  }
 }
 module.exports = new UrlShortenerController()

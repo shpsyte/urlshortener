@@ -6,5 +6,6 @@ const UrlStatisticsController = require('./src/app/controllers/UrlStatisticContr
 routes.post('/short/:key*?', UrlShortenerController.store)
 routes.get('/show/:key*?', UrlShortenerController.show)
 routes.get('/data/:key*?', UrlStatisticsController.show)
+routes.get('/navigate/:key*?', UrlShortenerController.navigate)
 
 module.exports = routes

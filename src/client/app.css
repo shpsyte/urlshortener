@@ -88,3 +88,9 @@
   list-style: none;
   color: #1c2022;
 }
+
+.result .stats .direct {
+  min-height: 100px;
+  text-align: left;
+  font-size: 1.5em;
+}

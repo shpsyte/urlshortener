@@ -75,17 +75,25 @@ https://trello.com/b/K0deONn3/urlshortener
 
 There is a three API to use
 
-//appshorturl.herokuapp.com/short
+## POST
+
+https://appshorturl.herokuapp.com/short
 
 Short the URL
 
-//appshorturl.herokuapp.com/show/<hey_to_find>
+## GET
+
+https://appshorturl.herokuapp.com/show/<hey_to_find>
 
 Get URL from short Key
 
-//appshorturl.herokuapp.com/data/<hey_to_find>
+https://appshorturl.herokuapp.com/data/<hey_to_find>
 
 Get Statists from short Key
+
+https://appshorturl.herokuapp.com/navigate/<hey_to_find>
+
+Navigate to origin URL and update statistcs
 
 1. https://appshorturl.herokuapp.com/short
 
@@ -190,6 +198,22 @@ The return will be a collection OF: <exemple>
   }
 ]
 ```
+
+4. https://appshorturl.herokuapp.com/navigate
+   Here you can send with parameters or json body
+
+With json body:
+
+```json
+{
+  "key": "keytofind"
+}
+```
+
+With parameter:
+https://appshorturl.herokuapp.com/navigate/<keytoFind>
+
+The return will be a redirect to URL
 
 # Learning More
 

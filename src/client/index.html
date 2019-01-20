@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/app.css" />
    <link rel="stylesheet" href="/fork.css" />
     <link rel="shortcut icon" href="images/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <title>Shortener URL</title>
     <meta name="description" content="Short URL, simple webapp RestFull API.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -40,7 +41,7 @@
             <a target="_blank" href="https://github.com/shpsyte/urlshortener">How to use this WebAPI</a>
             <div class="timeline-wrapper">
                 <form>
-                  <div id="p2" style="display: none" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+                  <div id="progress" style="display: none" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" id="url" name="url">
                         <label class="mdl-textfield__label" for="url">Url to Short...</label>
@@ -50,7 +51,17 @@
                   </button>
                 </form>
             </div>
-            <ul class="ul demo-list-item mdl-list"></ul>
+             <div class="demo-container">
+                <p>Navigate API Short</p>
+                <p><a href="" target="_blank" rel="noopener noreferrer" class="result"><span class="urlName"></span></a></p>
+                <hr>
+                <p>Show API Statistics <small>Use API Short to create statistics :)</small></p>
+                <p><a href="" target="_blank" rel="noopener noreferrer" class="stats"><span class="urlNameStats"></span></a></p>
+                <hr>
+                <p>Direct Navigate will be Update Statistics</p>
+                <p><a href="" target="_blank" rel="noopener noreferrer" class="direct"><span class="urlNameNav"></span></a></p>
+              
+             </div>
           </div>
         </div>
         <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
@@ -66,8 +77,12 @@
     </div>
 
     <script defer src="/mdl.js"></script>
+    <script src="services/Api.js"></script>
+    <script src="services/UrlServices.js"></script>
+    <script src="controllers/Short.js"></script>
     
     <script>
+       let short = new ShortController()
 
 
     </script>
