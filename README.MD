@@ -12,6 +12,8 @@ This project contains all the information to complete my challenge at:
 <a href="https://gist.github.com/FylmTM/e3c4e5f337a176e94d6dd51703068925" target="_blank">
 Vanhack Challenge</a>
 
+Need add URL validation!!!! on Client and Back!!
+
 ## Check here
 
 <a href="https://appshorturl.herokuapp.com/" target="_blank">Short URL - ShortURL</a>
