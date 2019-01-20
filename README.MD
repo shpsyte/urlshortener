@@ -66,6 +66,11 @@ docker run --name mongonode -p 27017:27017 -d -t mongo
 
 Ps. Use MondoDB to scale!!
 
+To developer this simple APP, I use Srum. hahaha
+Check board here: (Now, all task is DONE. )
+
+https://trello.com/b/K0deONn3/urlshortener
+
 # How to use API
 
 There is a three API to use
