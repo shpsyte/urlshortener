@@ -38,13 +38,13 @@ class App {
   }
 
   database () {
-    // mongoose.connect(
-    //   databaseConfig.uri,
-    //   {
-    //     useCreateIndex: true,
-    //     useNewUrlParser: true
-    //   }
-    // )
+    mongoose.connect(
+      databaseConfig.uri,
+      {
+        useCreateIndex: true,
+        useNewUrlParser: true
+      }
+    )
   }
   middleware () {
     this.express.use(express.json())
