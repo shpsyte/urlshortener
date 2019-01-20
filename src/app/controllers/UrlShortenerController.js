@@ -10,12 +10,7 @@ class UrlShortenerController {
     let completeUrl = urlKey || url
     let data = { completeUrl: '', keyOfUrl: '' }
 
-    let urlSave = ''
-    if (!/^https?:\/\//i.test(completeUrl)) {
-      urlSave = 'http://' + completeUrl
-    }
-
-    data.completeUrl = urlSave
+    data.completeUrl = completeUrl
     data.keyOfUrl = randomstring.generate(7)
 
     if (!urlValid(data.completeUrl)) {
