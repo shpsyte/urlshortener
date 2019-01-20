@@ -57,6 +57,6 @@ class ShortController {
     let navigate = post.completeUrl
 
     this._elementNav.href = `/navigate/${post.keyOfUrl}`
-    this._spanNavEl.innerHTML = navigate
+    this._spanNavEl.innerHTML = `Direct Navigate: ${post.keyOfUrl} `
   }
 }

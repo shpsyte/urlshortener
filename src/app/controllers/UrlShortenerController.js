@@ -10,7 +10,12 @@ class UrlShortenerController {
     let completeUrl = urlKey || url
     let data = { completeUrl: '', keyOfUrl: '' }
 
-    data.completeUrl = completeUrl
+    let urlSave = ''
+    if (!/^https?:\/\//i.test(completeUrl)) {
+      urlSave = 'http://' + completeUrl
+    }
+
+    data.completeUrl = urlSave
     data.keyOfUrl = randomstring.generate(7)
 
     if (!urlValid(data.completeUrl)) {
@@ -70,16 +75,17 @@ class UrlShortenerController {
     }
 
     await UrlStatistic.create(statistc).then(a => {
-      let url = ''
-      if (!/^https?:\/\//i.test(data.completeUrl)) {
-        url = 'http://' + data.completeUrl
-      }
-      res.redirect(url)
+      // let url = ''
+      // if (!/^https?:\/\//i.test(data.completeUrl)) {
+      //   url = 'http://' + data.completeUrl
+      // }
+
+      res.redirect(data.completeUrl)
 
       // res.writeHead(301, {
-      //   Location: url
+      //   Location: data.completeUrl
       // })
-      // res.send()
+      // res.end()
     })
   }
 }
