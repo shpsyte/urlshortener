@@ -1,4 +1,5 @@
 require('dotenv').config()
+
 const express = require('express')
 const expressip = require('express-ip')
 const routes = require('./routes')
@@ -37,13 +38,13 @@ class App {
   }
 
   database () {
-    mongoose.connect(
-      databaseConfig.uri,
-      {
-        useCreateIndex: true,
-        useNewUrlParser: true
-      }
-    )
+    // mongoose.connect(
+    //   databaseConfig.uri,
+    //   {
+    //     useCreateIndex: true,
+    //     useNewUrlParser: true
+    //   }
+    // )
   }
   middleware () {
     this.express.use(express.json())
