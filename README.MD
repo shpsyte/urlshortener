@@ -52,11 +52,28 @@ DATABASE_HOST= mongodb://localhost:27017/urlshortener
 Change your connection string!
 I'm using Docker, so you need create a Docker to use MongoDB (Or if you preffer use MongoAtlas!)
 
-So, to run MondoDb on Docker!
+### Run MondoDb on Docker!
 
 ```cmd
 docker run --name mongonode -p 27017:27017 -d -t mongo
 ```
+
+### Run app on Docker!
+
+After copy from Git, if you need run on Docker tun this comand on Directory of application
+
+```cmd
+docker build -t urlshort/node-web-app .
+```
+
+Your image will now be listed by Docker, and this comand will tun the App
+
+```cmd
+docker run -p 8080:8080 -d urlshort/node-web-app
+```
+
+Navite on:
+http://localhost:8080/
 
 ## Built With
 
@@ -126,22 +143,9 @@ The return will be: <exemple>
 
 [GET]
 
-2. https://appshorturl.herokuapp.com/show
+2. https://appshorturl.herokuapp.com/show/keyToFind
 
-   Here you can send with parameters or json body
-
-With json body:
-
-```json
-{
-  "key": "keytofind"
-}
-```
-
-With parameter:
-https://appshorturl.herokuapp.com/show/<keytoFind>
-
-The return will be: <exemple>
+The return will be A ORIGIN URL, QT Of Use
 
 ```json
 {
@@ -156,22 +160,9 @@ The return will be: <exemple>
 
 [GET]
 
-3. https://appshorturl.herokuapp.com/Data
+3. https://appshorturl.herokuapp.com/Data/keyToFind
 
-   Here you can send with parameters or json body
-
-With json body:
-
-```json
-{
-  "key": "keytofind"
-}
-```
-
-With parameter:
-https://appshorturl.herokuapp.com/data/<keytoFind>
-
-The return will be a collection OF: <exemple>
+The return will be a collection OF statistics that you can use
 
 ```json
 [
@@ -191,7 +182,7 @@ The return will be a collection OF: <exemple>
     "createAt": "2019-01-20T19:22:29.818Z",
     "__v": 0
   },
-  {https://www.google.com/search?q=NODEjs+docker
+  {
     "_id": "5c44ca7630afc960afc77154",
     "keyOfUrl": "yHktMkL",
     "fromIp": "::ffff:127.0.0.1",
@@ -213,22 +204,9 @@ The return will be a collection OF: <exemple>
 
 [GET]
 
-4. https://appshorturl.herokuapp.com/navigate
+4. https://appshorturl.herokuapp.com/navigate/keyToFind
 
-   Here you can send with parameters or json body
-
-With json body:
-
-```json
-{
-  "key": "keytofind"
-}
-```
-
-With parameter:
-https://appshorturl.herokuapp.com/navigate/<keytoFind>
-
-The return will be a redirect to URL
+The return will be a redirect to URL and Update statistics
 
 # Learning More
 
