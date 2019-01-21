@@ -48,15 +48,20 @@ class ShortController {
   }
 
   async showUrl (post) {
-    this._element.href = `/show/${post.keyOfUrl}`
-    this._spanEl.innerHTML = `url: ${post.keyOfUrl} `
+    if (post === 'URL is Invalid') {
+      this._element.href = '#'
+      this._spanEl.innerHTML = 'URL is Invalid!'
+    } else {
+      this._element.href = `/show/${post.keyOfUrl}`
+      this._spanEl.innerHTML = `url: ${post.keyOfUrl} `
 
-    this._elementStats.href = `/data/${post.keyOfUrl}`
-    this._spanStatsEl.innerHTML = `Show Statistics: ${post.keyOfUrl} `
+      this._elementStats.href = `/data/${post.keyOfUrl}`
+      this._spanStatsEl.innerHTML = `Show Statistics: ${post.keyOfUrl} `
 
-    let navigate = post.completeUrl
+      let navigate = post.completeUrl
 
-    this._elementNav.href = `/navigate/${post.keyOfUrl}`
-    this._spanNavEl.innerHTML = `Direct Navigate: ${post.keyOfUrl} `
+      this._elementNav.href = `/navigate/${post.keyOfUrl}`
+      this._spanNavEl.innerHTML = `Direct Navigate: ${post.keyOfUrl} `
+    }
   }
 }

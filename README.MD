@@ -75,7 +75,7 @@ https://trello.com/b/K0deONn3/urlshortener
 
 # How to use API
 
-There is a three API to use
+There is a four API to use
 
 ## POST
 
@@ -96,6 +96,10 @@ Get Statists from short Key
 https://appshorturl.herokuapp.com/navigate/<hey_to_find>
 
 Navigate to origin URL and update statistcs
+
+# Details API
+
+[POST]
 
 1. https://appshorturl.herokuapp.com/short
 
@@ -120,7 +124,10 @@ The return will be: <exemple>
 }
 ```
 
+[GET]
+
 2. https://appshorturl.herokuapp.com/show
+
    Here you can send with parameters or json body
 
 With json body:
@@ -147,7 +154,10 @@ The return will be: <exemple>
 }
 ```
 
+[GET]
+
 3. https://appshorturl.herokuapp.com/Data
+
    Here you can send with parameters or json body
 
 With json body:
@@ -181,7 +191,7 @@ The return will be a collection OF: <exemple>
     "createAt": "2019-01-20T19:22:29.818Z",
     "__v": 0
   },
-  {
+  {https://www.google.com/search?q=NODEjs+docker
     "_id": "5c44ca7630afc960afc77154",
     "keyOfUrl": "yHktMkL",
     "fromIp": "::ffff:127.0.0.1",
@@ -201,7 +211,10 @@ The return will be a collection OF: <exemple>
 ]
 ```
 
+[GET]
+
 4. https://appshorturl.herokuapp.com/navigate
+
    Here you can send with parameters or json body
 
 With json body:

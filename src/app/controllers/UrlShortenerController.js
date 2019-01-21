@@ -1,7 +1,7 @@
 const UrlShortener = require('../models/UrlShortener')
 const UrlStatistic = require('../models/UrlStatistic')
 const randomstring = require('randomstring')
-const urlValid = require('../validators/validUrl')
+const urlValid = require('valid-url')
 
 class UrlShortenerController {
   async store (req, res) {
@@ -13,8 +13,8 @@ class UrlShortenerController {
     data.completeUrl = completeUrl
     data.keyOfUrl = randomstring.generate(7)
 
-    if (!urlValid(data.completeUrl)) {
-      return res.status(400).json({ error: 'Url is invalid!' })
+    if (!urlValid.isWebUri(data.completeUrl)) {
+      return res.json('URL is Invalid')
     }
 
     const urlshortener = await UrlShortener.create(data)
